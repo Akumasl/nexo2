@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f1fa"><title>NEXO | Área do responsável</title>
+  <link rel="stylesheet" href="css/responsavel.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="responsavel.html"><img src="img/logo-nexo.png" alt=""><span>nexo</span></a>
+      <div class="profile-mini"><div class="avatar parent-avatar">N</div><div><strong id="parent-name-side">Nathaly</strong><small>Responsável</small></div></div>
+      <nav class="nav-menu" aria-label="Navegação principal">
+        <button class="nav-link active" data-view="inicio"><span>⌂</span> Início</button>
+        <button class="nav-link" data-view="tarefas"><span>▤</span> Tarefas</button>
+        <button class="nav-link" data-view="metas"><span>◎</span> Metas</button>
+        <button class="nav-link" data-view="filhos"><span>♙</span> Meus filhos</button>
+        <button class="nav-link" data-view="historico"><span>◷</span> Histórico</button>
+      </nav>
+      <div class="sidebar-bottom"><button class="nav-link" id="theme-side"><span>◐</span> Alternar tema</button><a class="nav-link" href="index.html"><span>↩</span> Voltar ao início</a></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><div class="mobile-brand"><img src="img/logo-nexo.png" alt=""><b>nexo</b></div><div class="top-actions"><span class="today-label" id="today-label"></span><button class="icon-button" id="theme-toggle" aria-label="Alternar tema">☼</button><div class="avatar parent-avatar">N</div></div></header>
+      <section class="view active" id="view-inicio">
+        <div class="welcome"><div><p class="eyebrow">ÁREA DO RESPONSÁVEL</p><h1>Olá, <span id="parent-name">Nathaly</span>! <span>👋</span></h1><p class="muted">Que bom ter você por aqui. Vamos acompanhar as conquistas de hoje?</p></div><button class="primary-button" data-action="add-task">＋ Nova tarefa</button></div>
+        <div class="children-strip"><div><h2>Quem vamos acompanhar?</h2><p class="muted small">Selecione um perfil para ver os detalhes</p></div><div class="child-picker" id="child-picker"></div><button class="add-child-circle" data-action="add-child" aria-label="Adicionar filho">＋</button></div>
+        <div class="dashboard-grid"><article class="panel goal-panel"><div class="panel-heading"><div><p class="eyebrow">META ATIVA</p><h2 id="home-goal-name">Bicicleta</h2></div><span class="goal-icon" id="home-goal-icon">🚲</span></div><div class="goal-score"><strong id="home-goal-score">650</strong><span id="home-goal-target">/ 1.000 pontos</span><b id="home-goal-percent">65%</b></div><div class="progress-track"><div class="progress-fill" id="home-goal-progress" style="width:65%"></div></div><div class="goal-footer"><span id="home-goal-date">Previsão de conclusão: 18 dez. 2026</span><button class="text-button" data-view="metas">Ver meta →</button></div></article>
+          <article class="panel summary-panel"><p class="eyebrow">RESUMO DE HOJE</p><div class="summary-number" id="summary-done">2 <small>/ 3</small></div><p class="muted">tarefas concluídas</p><div class="progress-track"><div class="progress-fill green" id="summary-progress" style="width:66%"></div></div><div class="summary-bottom"><span>⭐ <b id="summary-points">20</b> pontos conquistados</span></div></article></div>
+        <div class="section-heading"><div><h2>Tarefas de hoje</h2><p class="muted small" id="today-task-caption">Acompanhe o que precisa ser feito</p></div><button class="text-button" data-view="tarefas">Ver todas →</button></div>
+        <div class="task-list" id="home-task-list"></div>
+      </section>
+      <section class="view" id="view-tarefas"><div class="page-heading"><div><p class="eyebrow">ORGANIZAÇÃO</p><h1>Tarefas</h1><p class="muted">Crie atividades e acompanhe cada conquista.</p></div><button class="primary-button" data-action="add-task">＋ Adicionar tarefa</button></div><div class="filter-row"><div class="segmented"><button class="selected" data-filter="Hoje">Hoje</button><button data-filter="Semana">Semana</button><button data-filter="Todas">Todas</button></div><select id="task-child-filter" aria-label="Filtrar por adolescente"><option value="all">Todos os filhos</option></select></div><div class="task-list" id="all-task-list"></div></section>
+      <section class="view" id="view-metas"><div class="page-heading"><div><p class="eyebrow">OBJETIVOS E CONQUISTAS</p><h1>Metas</h1><p class="muted">Incentive cada adolescente com objetivos especiais.</p></div><button class="primary-button" data-action="add-goal">＋ Nova meta</button></div><div id="goals-content"></div></section>
+      <section class="view" id="view-filhos"><div class="page-heading"><div><p class="eyebrow">VÍNCULOS FAMILIARES</p><h1>Meus filhos</h1><p class="muted">Gerencie os perfis acompanhados por você.</p></div><button class="primary-button" data-action="add-child">＋ Adicionar filho</button></div><div class="children-grid" id="children-grid"></div></section>
+      <section class="view" id="view-historico"><div class="page-heading"><div><p class="eyebrow">ACOMPANHAMENTO</p><h1>Histórico de atividades</h1><p class="muted">Veja as tarefas concluídas e os pontos registrados.</p></div></div><div class="panel"><div class="history-list" id="history-list"></div></div></section>
+    </main>
+  </div>
+  <nav class="mobile-nav"><button class="active" data-view="inicio"><span>⌂</span>Início</button><button data-view="tarefas"><span>▤</span>Tarefas</button><button class="mobile-add" data-action="add-task">＋</button><button data-view="metas"><span>◎</span>Metas</button><button data-view="filhos"><span>♙</span>Perfil</button></nav>
+  <dialog id="app-dialog"><form method="dialog" id="dialog-form"><div class="dialog-head"><div><p class="eyebrow" id="dialog-eyebrow">NEXO</p><h2 id="dialog-title">Adicionar</h2></div><button class="icon-button" value="cancel" aria-label="Fechar">×</button></div><div id="dialog-fields"></div><p class="form-error" id="form-error"></p><div class="dialog-actions"><button class="secondary-button" value="cancel">Cancelar</button><button class="primary-button" id="dialog-save" value="default">Salvar</button></div></form></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/responsavel.js"></script>
+</body></html>
